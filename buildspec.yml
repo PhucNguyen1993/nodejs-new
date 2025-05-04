@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo Cài đặt các gói cần thiết...
+
+  pre_build:
+    commands:
+      - echo Kiểm tra code...
+
+  build:
+    commands:
+      - echo Build ứng dụng...
+      - grep -Fq "Congratulations" index.html
+
+  post_build:
+    commands:
+      - echo Hoàn tất build. Chuẩn bị deploy artifact...
